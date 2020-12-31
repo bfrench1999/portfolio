@@ -26,6 +26,55 @@ img {
   object-fit: cover;
 }
 
+.section-title {
+  font-size: 4rem;
+  font-weight: 300;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  text-align: center;
+}
+
+.section-title span {
+  color: crimson;
+}
+.brand span {
+  color: crimson;
+}
+
+.cta {
+  display: inline-block;
+  padding: 10px 30px;
+  color: whitesmoke;
+  background-color: transparent;
+  border: 2px solid crimson;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-top: 30px;
+  transition: 0.3s ease;
+  transition-property: backround-color, color;
+}
+.cta:hover {
+  color: white;
+  background-color: crimson;
+}
+
+/* header section*/
+#header {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: auto;
+}
+#header .header {
+  min-height: 8vh;
+  background-color: yellow;
+}
+/* end header section*/
+
 /* hero section */
 #hero {
   background-image: url("./pics/incity.jpg");
@@ -95,23 +144,6 @@ img {
   animation-delay: 0.3s ease;
 }
 
-#hero .cta {
-  display: inline-block;
-  padding: 10px 30px;
-  color: whitesmoke;
-  background-color: transparent;
-  border: 2px solid crimson;
-  font-size: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  margin-top: 30px;
-  transition: 0.3s ease;
-  transition-property: backround-color, color;
-}
-#hero .cta:hover {
-  color: white;
-  background-color: crimson;
-}
 /* end hero section */
 
 /* service section */
@@ -128,16 +160,13 @@ img {
   background-position: center;
   background-size: 100% 100%;
 }
-#services .section-title {
-  font-size: 4rem;
-  font-weight: 300;
-  color: black;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  text-align: center;
-}
+
 #services .service-top {
-  margin-bottom: 150px;
+  margin-bottom: 100px;
+}
+
+#services .service-title {
+  margin-top: 10px;
 }
 
 #services .service-top p {
@@ -147,10 +176,6 @@ img {
   font-weight: 300;
   letter-spacing: 0.05rem;
   padding: 0 15rem;
-}
-
-#services .section-title span {
-  color: crimson;
 }
 
 #services .service-bottom {
@@ -193,6 +218,244 @@ img {
 
 /* end service section */
 
+/* projects section */
+#projects .projects {
+  flex-direction: column;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 100px 0;
+  background-image: url(./pics/pexels-cottonbro-5473959.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+#project .projects-header h1 {
+  margin-bottom: 50px;
+}
+
+#projects .all-projects {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#projects .project-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+#projects .project-info {
+  padding: 30px;
+  flex-basis: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url(./pics/graphite.png);
+  color: white;
+  width: 100%;
+}
+
+#projects .project-img {
+  height: 300px;
+  overflow: hidden;
+}
+
+#projects .project-img:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-image: -moz-linear-gradient(60deg, #485563 100%);
+  opacity: 0.8;
+}
+
+#projects .project-img img {
+  transition: 0.3s ease transform;
+}
+
+#projects .project-item:hover .project-img img {
+  transform: scale(1.1);
+}
+
+#projects .project-info h1 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+#projects .project-info h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+#projects .project-info p {
+  color: white;
+}
+
+/* end projects section */
+
+/* about section*/
+#about .about {
+  flex-direction: column-reverse;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 20px;
+}
+
+#about .col-left {
+  width: 360px;
+  height: 360px;
+}
+
+#about .col-right {
+  width: 100%;
+}
+
+#about .col-right h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  margin-bottom: 10px;
+}
+#about .col-right p {
+  margin-bottom: 20px;
+}
+#about .col-right .cta {
+  color: black;
+  margin-bottom: 50px;
+  padding: 10px 20px;
+  font-size: 2rem;
+}
+#about .col-left .about-img {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  border: 10px solid white;
+}
+
+#about .col-left .about-img::after {
+  content: "";
+  position: absolute;
+  left: -33px;
+  top: 20px;
+  height: 98%;
+  width: 98%;
+  border: 7px solid crimson;
+  z-index: -1;
+}
+
+/* end about section*/
+
+/*contact section*/
+#contact .contact {
+  flex-direction: column;
+  max-width: 0 auto;
+  margin: 0 auto;
+}
+#contact .contact-items {
+  width: 350px;
+}
+#contact .contact-item {
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  padding: 30px;
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0px 0px 18px 0 #0000002c;
+  transition: 0.3s ease box-shadow;
+}
+#contact .contact-item:hover {
+  box-shadow: 0px 0px 5px 0 #0000002c;
+}
+#contact .icon {
+  width: 70px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+#contact .contact-info h1 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+#contact .contact-info h2 {
+  font-size: 1.3rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+/*end contact section*/
+
+/*footer*/
+#footer {
+  background-image: url(https://themeccagym.com/wp-content/uploads/2019/09/black-gradient-background.png);
+  background-size: contain;
+}
+#footer .footer {
+  min-height: 200px;
+  flex-direction: column;
+  padding-top: 50px;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.brand {
+  text-align: center;
+  color: white;
+  font-weight: 500;
+  font-size: 2rem;
+}
+#footer .social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  padding: 0 3rem;
+}
+
+#footer h2 {
+  color: white;
+  text-align: center;
+  justify-content: center;
+}
+#footer p {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.social-item img {
+  filter: grayscale(1);
+}
+.social-item:hover img {
+  filter: grayscale(0);
+  transition: 0.3s ease filter;
+}
+.social-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px;
+}
+
+/* end footer*/
 /* keyframes */
 @keyframes text_reveal_box {
   50% {
@@ -220,5 +483,7 @@ img {
 @media only screen and (max-width: 600px) {
   #services .service-top p {
     padding: 0 2.5rem;
+  }
+  .social-item {
   }
 }

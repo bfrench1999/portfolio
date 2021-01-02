@@ -36,18 +36,18 @@ img {
 }
 
 .section-title span {
-  color: crimson;
+  color: #f05454;
 }
 .brand span {
-  color: crimson;
+  color: #f05454;
 }
 
 .cta {
   display: inline-block;
   padding: 10px 30px;
-  color: whitesmoke;
+  color: #30475e;
   background-color: transparent;
-  border: 2px solid crimson;
+  border: 2px solid #f05454;
   font-size: 2rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
@@ -57,7 +57,7 @@ img {
 }
 .cta:hover {
   color: white;
-  background-color: crimson;
+  background-color: #f05454;
 }
 
 /* header section*/
@@ -68,21 +68,145 @@ img {
   top: 0;
   width: 100vw;
   height: auto;
+  background-color: #e8e8e8;
 }
 #header .header {
   min-height: 8vh;
-  background-color: yellow;
+  background-color: #30475e;
+  transition: 0.3s ease background-color;
 }
+#header .nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  max-width: 1300px;
+  padding: 0 10px;
+}
+#header .nav-list ul {
+  list-style: none;
+  position: absolute;
+  background-color: rgb(31, 30, 30);
+  width: 100vw;
+  height: 100vh;
+  left: 100%;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+  overflow-x: hidden;
+  transition: 0.6s ease left;
+}
+#header .nav-list ul.active {
+  left: 0%;
+}
+#header .nav-list ul a {
+  font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  padding: 20px;
+  display: block;
+}
+#header .nav-list ul a {
+  font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  padding: 20px;
+  display: block;
+}
+#header .nav-list ul a::after {
+  content: attr(data-after);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  color: rgba(240, 248, 255, 0);
+  font-size: 15rem;
+  letter-spacing: 50px;
+  z-index: -1;
+  transition: 0.3s ease letter-spacing;
+}
+#header .nav-list ul li:hover a::after {
+  transform: translate(-50%, -50%) scale(1);
+  letter-spacing: initial;
+}
+#header .nav-list ul li:hover a {
+  color: #f05454;
+}
+#header .hamburger {
+  height: 60px;
+  width: 60px;
+  display: inline-block;
+  border: 3px solid white;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  cursor: pointer;
+  transform: scale(0.8);
+  margin-right: 20px;
+}
+#header .hamburger:after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  border: 3px solid white;
+  animation: hamburger_puls 1s ease infinite;
+}
+#header .hamburger .bar {
+  height: 2px;
+  width: 30px;
+  position: relative;
+  background-color: white;
+  z-index: -1;
+}
+#header .hamburger .bar::after,
+#header .hamburger .bar::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  background-color: white;
+  transition: 0.3s ease;
+  transition-property: top, bottom;
+}
+#header .hamburger .bar::after {
+  top: 8px;
+}
+#header .hamburger .bar::before {
+  bottom: 8px;
+}
+#header .hamburger.active .bar::before {
+  bottom: 0;
+}
+#header .hamburger.active .bar::after {
+  top: 0;
+}
+
 /* end header section*/
 
 /* hero section */
 #hero {
-  background-image: url("./pics/incity.jpg");
   background-size: cover;
   background-position: top center;
   position: relative;
   z-index: 1;
 }
+
 #hero::after {
   content: "";
   position: absolute;
@@ -139,7 +263,7 @@ img {
   left: 0;
   height: 100%;
   width: 0;
-  background-color: crimson;
+  background-color: #f05454;
   animation: text_reveal_box 1s ease;
   animation-delay: 0.3s ease;
 }
@@ -147,18 +271,18 @@ img {
 /* end hero section */
 
 /* service section */
-
-#services .services {
+.services {
   flex-direction: column;
   text-align: center;
   max-width: 100%;
   margin: 0 auto;
   padding: 100px 0;
-  background-image: url(/pics/outcity.jpg);
+
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
+  background-color: #e8e8e8;
 }
 
 #services .service-top {
@@ -193,14 +317,14 @@ img {
   flex-direction: column;
   padding: 30px;
   border-radius: 10px;
-  background-image: url(./pics/work.jpg);
+
   background-size: cover;
   margin: 10px 5%;
 }
 
 #services .service-item h2 {
   font-size: 3rem;
-  color: black;
+  color: #30475e;
   margin-bottom: 15px;
   text-transform: uppercase;
 }
@@ -224,7 +348,8 @@ img {
   max-width: 100%;
   margin: 0 auto;
   padding: 100px 0;
-  background-image: url(./pics/pexels-cottonbro-5473959.jpg);
+  background-color: #e8e8e8;
+
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -233,6 +358,7 @@ img {
 
 #project .projects-header h1 {
   margin-bottom: 50px;
+  background-color: #e8e8e8;
 }
 
 #projects .all-projects {
@@ -240,6 +366,7 @@ img {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-color: #e8e8e8;
 }
 
 #projects .project-item {
@@ -251,6 +378,9 @@ img {
   margin: 20px auto;
   overflow: hidden;
   border-radius: 10px;
+  border: 1px solid red;
+  box-shadow: 5px 5px 5px 5px grey;
+  background-color: white;
 }
 
 #projects .project-info {
@@ -261,8 +391,8 @@ img {
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  background-image: url(./pics/graphite.png);
-  color: white;
+
+  color: #30475e;
   width: 100%;
 }
 
@@ -291,17 +421,18 @@ img {
 }
 
 #projects .project-info h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 500;
 }
 #projects .project-info h2 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 500;
   margin-top: 10px;
 }
 
 #projects .project-info p {
-  color: white;
+  color: #f05454;
+  font-size: 1.3rem;
 }
 
 /* end projects section */
@@ -353,7 +484,7 @@ img {
   top: 20px;
   height: 98%;
   width: 98%;
-  border: 7px solid crimson;
+  border: 7px solid #f05454;
   z-index: -1;
 }
 
@@ -404,8 +535,7 @@ img {
 
 /*footer*/
 #footer {
-  background-image: url(https://themeccagym.com/wp-content/uploads/2019/09/black-gradient-background.png);
-  background-size: contain;
+  background-color: #222831;
 }
 #footer .footer {
   min-height: 200px;
@@ -469,12 +599,13 @@ img {
 }
 @keyframes text_reveal {
   100% {
-    color: white;
+    color: #222831;
+    display: block;
   }
 }
 @keyframes text_reveal_name {
   100% {
-    color: crimson;
+    color: #f05454;
     font-weight: bold;
   }
 }
@@ -483,7 +614,5 @@ img {
 @media only screen and (max-width: 600px) {
   #services .service-top p {
     padding: 0 2.5rem;
-  }
-  .social-item {
   }
 }

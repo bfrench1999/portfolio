@@ -14,48 +14,57 @@
         <div class="nav-bar">
           <div class="brand">
             <a href="#hero"
-              ><h1><span>B</span>randen <span>F</span>rench</h1></a
+              ><h1 style="color: white">
+                <span>B</span>randen <span>F</span>rench
+              </h1></a
             >
           </div>
           <div class="nav-list">
-            <div class="hamburger">
-              <div class="bar"></div>
-              <ul>
-                <li>
-                  <a href="#">Home</a>
-                </li>
-                <li>
-                  <a href="#">Services</a>
-                </li>
-                <li>
-                  <a href="#">Projects</a>
-                </li>
-                <li>
-                  <a href="#">About</a>
-                </li>
-                <li>
-                  <a href="#">Contact</a>
-                </li>
-              </ul>
-            </div>
+            <div class="hamburger"><div class="bar"></div></div>
+            <ul>
+              <li>
+                <a class="mobile-link" href="#hero" data-after="Home">Home</a>
+              </li>
+              <li>
+                <a class="mobile-link" href="#services" data-after="Service"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a class="mobile-link" href="#projects" data-after="Projects"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a class="mobile-link" href="#about" data-after="About"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a class="mobile-link" href="#contact" data-after="Contact"
+                  >Contact</a
+                >
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
-    <!--end header section-->
+    <!-- End Header -->
 
-    <!--hero section-->
-    <section id="hero">
-      <div class="hero container">
-        <div class="">
-          <h1>Hello,<span></span></h1>
-          <h1>My Name Is <span></span></h1>
+    <!-- Hero Section  -->
+    <section style="color: #e8e8e8" id="hero">
+      <div style="background-color: #e8e8e8" class="hero container">
+        <div>
+          <h1>Hello, <span></span></h1>
+          <h1>My Name is <span></span></h1>
           <h1>Branden <span></span></h1>
-          <a href="#" type="button" class="cta">Portfolio</a>
+          <a href="#projects" type="button" class="cta">Portfolio</a>
         </div>
       </div>
     </section>
-    <!--end hero section-->
+    <!--  end Hero Section  -->
+
     <!--service-->
     <section id="services">
       <div class="services container">
@@ -267,5 +276,6 @@
       </div>
     </section>
     <!--end footer-->
+    <script src="./script.js"></script>
   </body>
 </html>
